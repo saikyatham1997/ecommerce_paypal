@@ -25,7 +25,7 @@ SECRET_KEY = '%4r2fyr&ch*b$9y@w%qb7wv8!)*4_2e_wue8)y934sk^z4z3wq'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -64,6 +64,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'ecommerce.context_processor.cart_item_count',
             ],
         },
     },
@@ -124,3 +125,14 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
 STATIC_URL = '/static/'
+
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+MEDIA_URL = '/media/'
+
+# The PAYPAL_RECEIVER_EMAIL setting refers to the email used to create the PayPal account.
+# This is the email where all the notification will be sent.
+# During testing you should set this to a sandbox account, otherwise the PayPal IPN will always return payment status pending.
+PAYPAL_RECEIVER_EMAIL = 'berlinnairobi1997@gmail.com'
+
+PAYPAL_TEST = True

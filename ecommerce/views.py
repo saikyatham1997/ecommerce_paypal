@@ -117,5 +117,6 @@ def payment_done(request):
 def payment_cancelled(request):
     return render(request, 'ecommerce_app/payment_cancelled.html')
 
+# Paypal Buyer Account
 # Username # sb-qwz9u2589965@personal.example.com
 # Password # j0,#h87F
